@@ -25,17 +25,29 @@ class Solution {
             }
         }
 
-        StringBuilder sb = new StringBuilder();
+        // StringBuilder sb = new StringBuilder();
 
-        for (int i = maxFreq; i >= 1; i--) {
-            List<Character> freqChar = freqMap.getOrDefault(i, new ArrayList<Character>());
-            for (Character charac : freqChar) {
-                for (int j = i; j >= 1; j--) {
-                    sb.append(charac);
+        // for (int i = maxFreq; i >= 1; i--) {
+        // List<Character> freqChar = freqMap.getOrDefault(i, new
+        // ArrayList<Character>());
+        // for (Character charac : freqChar) {
+        // for (int j = i; j >= 1; j--) {
+        // sb.append(charac);
+        // }
+        // }
+        // }
+        // return sb.toString();
+        for (int i = 0; i < ipLen; i++) {
+            for (int j = maxFreq; j >= 1; j--) {
+                List<Character> freqChar = freqMap.getOrDefault(j, new ArrayList<Character>());
+                for (Character charac : freqChar) {
+                    for (int k = j; k >= 1; k--) {
+                        charArr[i++] = charac;
+                    }
                 }
             }
         }
-        return sb.toString();
+        return new String(charArr);
 
         /*
          * char[] str = s.toCharArray();
