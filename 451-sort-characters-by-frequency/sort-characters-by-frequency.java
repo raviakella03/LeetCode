@@ -1,16 +1,18 @@
 class Solution {
-    //T.C. - O(N)
-    //S.C. - O(N)
+    // T.C. - O(N)
+    // S.C. - O(N)
     public String frequencySort(String s) {
-        //O(123) --> O(1)
+
+        // O(123) --> O(1)
         int[] freqArr = new int[123];
-        int ipLen = s.length();
+        char[] charArr = s.toCharArray();
+        int ipLen = charArr.length;
         int maxFreq = Integer.MIN_VALUE;
-        //O(52 * freq of each element) --> O(string length) --> O(N)
+        // O(52 * freq of each element) --> O(string length) --> O(N)
         Map<Integer, List<Character>> freqMap = new HashMap<>();
-        //O(string length)
+        // O(string length)
         for (int i = 0; i < ipLen; i++) {
-            int idx = s.charAt(i);
+            int idx = charArr[i];
             freqArr[idx] += 1;
             maxFreq = Math.max(maxFreq, freqArr[idx]);
         }
@@ -34,5 +36,28 @@ class Solution {
             }
         }
         return sb.toString();
+
+        /*
+         * char[] str = s.toCharArray();
+         * int[] freq = new int[128];
+         * // for(char ch:s) freq[ch]++;
+         * for (int i = 0; i < str.length; i++) {
+         * freq[str[i]]++;
+         * }
+         * 
+         * for (int i = 0; i < str.length;) {
+         * char cmax = ',';
+         * for (int j = 0; j < 128; j++) {
+         * if (freq[j] > freq[cmax]) {
+         * cmax = (char) j;
+         * }
+         * }
+         * while (freq[cmax] != 0) {
+         * str[i++] = cmax;
+         * freq[cmax]--;
+         * }
+         * }
+         * return new String(str);
+         */
     }
 }
