@@ -3,7 +3,7 @@ class Solution {
         int[] dpArr = new int[n + 1];
         dpArr[0] = 0;
         for(int i = 1; i <= n;) {
-            dpArr[i++] = n;
+            dpArr[i++] = i;
         }
 
         for(int i = 1; i <= n; i++) {
