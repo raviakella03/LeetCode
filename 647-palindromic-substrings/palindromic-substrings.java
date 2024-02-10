@@ -14,11 +14,6 @@ class Solution {
             int rightPointer = centreIndex;
             while (leftPointer >= 0 && rightPointer < inputStringLength) {
                 if (s.charAt(leftPointer) == s.charAt(rightPointer)) {
-                    // if (maxOddLengthOfPalindromicSubString < rightPointer - leftPointer + 1) {
-                    // maxOddLengthOfPalindromicSubString = rightPointer - leftPointer + 1;
-                    // maxOddLengthStartIndex = leftPointer;
-                    // maxOddLengthEndIndex = rightPointer;
-                    // }
                     ++oddLengthPalindromesCount;
                     --leftPointer;
                     ++rightPointer;
@@ -41,11 +36,6 @@ class Solution {
                 int rightPointer = rightCentre;
                 while (leftPointer >= 0 && rightPointer < inputStringLength) {
                     if (s.charAt(leftPointer) == s.charAt(rightPointer)) {
-                        // if (maxEvenLengthOfPalindromicSubString < rightPointer - leftPointer + 1) {
-                        // maxEvenLengthOfPalindromicSubString = rightPointer - leftPointer + 1;
-                        // maxEvenLengthStartIndex = leftPointer;
-                        // maxEvenLengthEndIndex = rightPointer;
-                        // }
                         ++evenLengthPalindromesCount;
                         --leftPointer;
                         ++rightPointer;
