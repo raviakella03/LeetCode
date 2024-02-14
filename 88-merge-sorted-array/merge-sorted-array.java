@@ -25,7 +25,9 @@ class Solution {
             ++j;
             ++k;
         }
+
         i = 0;
+        
         for(i = 0; i < nums1.length; i++) {
             nums1[i] = result[i];
         }
