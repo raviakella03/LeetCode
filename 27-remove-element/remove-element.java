@@ -6,7 +6,10 @@ class Solution {
         while (i <= j) {
             if (nums[i] == val) {
                 ++count;
-                swap(nums, i, j);
+                // swap(nums, i, j);
+                nums[i] = nums[i] + nums[j];
+                nums[j] = nums[i] - nums[j];
+                nums[i] = nums[i] - nums[j];
                 --j;
             } else {
                 ++i;
@@ -15,9 +18,9 @@ class Solution {
         return nums.length - count;
     }
 
-    private void swap(int[] nums, int i, int j) {
-        nums[i] = nums[i] + nums[j];
-        nums[j] = nums[i] - nums[j];
-        nums[i] = nums[i] - nums[j];
-    }
+    // private void swap(int[] nums, int i, int j) {
+    // nums[i] = nums[i] + nums[j];
+    // nums[j] = nums[i] - nums[j];
+    // nums[i] = nums[i] - nums[j];
+    // }
 }
