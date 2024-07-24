@@ -2,7 +2,22 @@ class Solution {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
-        int[] prefixProd = new int[n];
+        
+        //O(N), O(1)
+        Arrays.fill(result, 1);
+
+        for(int i = 1; i < nums.length; i++) {
+            result[i] = result[i - 1] * nums[i - 1];
+        }
+        int prev = 1;
+
+        for(int i = n - 1; i >=0; i--) {
+            result[i] = result[i] * prev;
+            prev = prev * nums[i];
+        }
+
+        //O(N), O(N)
+        /*int[] prefixProd = new int[n];
         int[] suffixProd = new int[n];
         prefixProd[0] = nums[0];
         suffixProd[n - 1] = nums[n - 1];
@@ -23,8 +38,7 @@ class Solution {
             } else {
                 result[i] = prefixProd[i - 1] * suffixProd[i + 1];
             }
-        }
-
+        } */
         return result;
     }
 }
