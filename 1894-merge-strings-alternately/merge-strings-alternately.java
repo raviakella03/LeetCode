@@ -15,7 +15,6 @@ class Solution {
             ++j;
         }
 
-
         while(i < length1) {
             sb.append(word1.charAt(i));
             ++i;
