@@ -7,7 +7,7 @@ class Solution {
         for (int i = 0; i < k; i++) {
             temp += nums[i];
         }
-
+        
         result = temp;
 
         for (int i = k; i < n; i++) {
