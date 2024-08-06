@@ -2,7 +2,7 @@ class Solution {
     public int[] asteroidCollision(int[] asteroids) {
         Stack<Integer> result = new Stack<>();
         for(int asteroid : asteroids) {
-            boolean currentAdd = true;
+            boolean collision = false;
             while(!result.empty() && asteroid < 0 && result.peek() > 0) {
                 if(result.peek() < -asteroid) {
                     result.pop();
@@ -10,10 +10,10 @@ class Solution {
                 } else if(result.peek() == -asteroid) {
                     result.pop();
                 }
-                currentAdd = false;
+                collision = true;
                 break;
             }
-            if(currentAdd)
+            if(!collision)
                 result.push(asteroid);
         }
         return result.stream().mapToInt(t -> t).toArray();
