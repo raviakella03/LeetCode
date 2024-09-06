@@ -30,12 +30,11 @@ class Solution {
         rightSideView(root.left, result, idx + 1);
         rightSideView(root.right, result, idx + 1);
     }
-    
+
     /*public List<Integer> rightSideView(TreeNode root) {
 
         List<Integer> result = new ArrayList<>();
         TreeNode currNode = root;
-
         while (null != currNode) {
             // System.out.println("Enter Loop1");
             //no right branch
@@ -61,7 +60,5 @@ class Solution {
                 }
             }
         }
-
-        return result;
-    } */
+    }*/
 }
