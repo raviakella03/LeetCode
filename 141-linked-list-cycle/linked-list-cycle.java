@@ -1,30 +1,25 @@
 /**
  * Definition for singly-linked list.
  * class ListNode {
- * int val;
- * ListNode next;
- * ListNode(int x) {
- * val = x;
- * next = null;
- * }
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
  * }
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        ListNode slowRider = head;
-        ListNode fastRider = head;
-        if (null == head) {
-            return false;
-        }
-        while (true) {
-            if (null == slowRider.next || null == fastRider.next || null == fastRider.next.next) {
-                return false;
-            } else if ((slowRider.next == fastRider.next.next)) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while(null != fast && null != fast.next) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast) {
                 return true;
-            } else {
-                slowRider = slowRider.next;
-                fastRider = fastRider.next.next;
             }
         }
+        return false;
     }
 }
