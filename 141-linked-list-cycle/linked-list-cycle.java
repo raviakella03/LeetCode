@@ -17,11 +17,9 @@ public class Solution {
             slow = slow.next;
             fast = fast.next.next;
             if(slow == fast) {
-                System.gc();
                 return true;
             }
         }
-        System.gc();
         return false;
     }
 }
